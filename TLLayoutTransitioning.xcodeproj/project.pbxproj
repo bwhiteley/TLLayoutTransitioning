@@ -10,6 +10,9 @@
 		86B471DD1B418AEF00BFDF01 /* TLLayoutTransitioning.h in Headers */ = {isa = PBXBuildFile; fileRef = 86B471DC1B418AEF00BFDF01 /* TLLayoutTransitioning.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		86EB12D21BEFBAEA00F26EA8 /* TLTransitionLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 869DA0571806581F00EC81C4 /* TLTransitionLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		86EB12D31BEFBAF100F26EA8 /* UICollectionView+TLTransitioning.h in Headers */ = {isa = PBXBuildFile; fileRef = 869DA0591806581F00EC81C4 /* UICollectionView+TLTransitioning.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CCB7141F20119C370002B284 /* TLTransitionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 869DA0561806581F00EC81C4 /* TLTransitionLayout.m */; };
+		CCB7142020119C3C0002B284 /* UICollectionView+TLTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 869DA0581806581F00EC81C4 /* UICollectionView+TLTransitioning.m */; };
+		CCB7142220119C7A0002B284 /* AHEasing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCB7142120119C790002B284 /* AHEasing.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +30,7 @@
 		86C7A42A18C8C3A700759782 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		86C7A42B18C8C3A700759782 /* TLLayoutTransitioning.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TLLayoutTransitioning.podspec; sourceTree = "<group>"; };
 		86C7A42C18C8C3A700759782 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		CCB7142120119C790002B284 /* AHEasing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AHEasing.framework; path = Carthage/Build/iOS/AHEasing.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCB7142220119C7A0002B284 /* AHEasing.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +69,7 @@
 		861AD37A180656D600A577A4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CCB7142120119C790002B284 /* AHEasing.framework */,
 				861AD37B180656D600A577A4 /* Foundation.framework */,
 				861AD37D180656D600A577A4 /* CoreGraphics.framework */,
 			);
@@ -175,6 +181,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCB7142020119C3C0002B284 /* UICollectionView+TLTransitioning.m in Sources */,
+				CCB7141F20119C370002B284 /* TLTransitionLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +272,10 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -295,6 +307,10 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = TLLayoutTransitioning/Info.plist;
