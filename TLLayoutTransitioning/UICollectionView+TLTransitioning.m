@@ -97,7 +97,7 @@ static char kTLEasingFunctionKey;
             self.collectionViewLayout = cancelLayout;
             self.contentOffset = cancelLayout.contentOffset;
         }
-        void(^cancelCompletion)() = data[@"cancelCompletion"];
+        void(^cancelCompletion)(void) = data[@"cancelCompletion"];
         if (cancelCompletion) {
             cancelCompletion();
         }
@@ -165,7 +165,7 @@ static char kTLEasingFunctionKey;
     [self finishInteractiveTransition];
 }
 
-- (void)cancelInteractiveTransitionInPlaceWithCompletion:(void (^)())completion
+- (void)cancelInteractiveTransitionInPlaceWithCompletion:(void (^)(void))completion
 {
     NSMutableDictionary *data = [self tl_transitionData];
     CADisplayLink *link = data[@"link"];

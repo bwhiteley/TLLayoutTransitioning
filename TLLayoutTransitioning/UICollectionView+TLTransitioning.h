@@ -139,7 +139,7 @@ extern CGPoint kTLPlacementAnchorDefault;
  if the screen rotates while a transition is in progress. NOTE that this method does not
  currently work with layouts that have supplementary or decorative views.
  */
-- (void)cancelInteractiveTransitionInPlaceWithCompletion:(void(^)())completion;
+- (void)cancelInteractiveTransitionInPlaceWithCompletion:(void (^)(void))completion;
 
 #pragma mark - Calculating transition values
 
